@@ -10,3 +10,4 @@ mkdocs.yml
 /docs
 test.bat
 /examples
+/dist
