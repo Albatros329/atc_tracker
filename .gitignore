@@ -11,3 +11,4 @@ mkdocs.yml
 test.bat
 /examples
 /dist
+/site
