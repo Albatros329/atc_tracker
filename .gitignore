@@ -9,3 +9,4 @@ debug.bat
 mkdocs.yml
 /docs
 test.bat
+/examples
