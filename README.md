@@ -1,8 +1,12 @@
 <div align="center">
 
-<img src="assets/images/banner2.png" width="500px">
+<img src="assets/images/banner2.png" width="500px" alt="logo">
+
+![GitHub Repo stars](https://img.shields.io/github/stars/Luckyluka17/atc_tracker?style=flat&logo=github&label=Github%20stars)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/atc-tracker?logo=pypi)
 
 </div>
+
 
 ## Features
 - Display of all current flights
@@ -16,14 +20,14 @@
 <details>
 <summary>Airport details</summary>
 
-![](assets/images/overview/image.png)
+![Airport details](assets/images/overview/image.png)
 
 </details>
 
 <details>
 <summary>Flights list (with filters)</summary>
 
-![](assets/images/overview/image2.png)
+![Flights list (with filters)](assets/images/overview/image2.png)
 
 </details>
 
