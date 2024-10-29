@@ -6,10 +6,11 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='atc_tracker',
-    version='0.1.0',
+    version='0.1.1-beta',
     description='The Air traffic Control in your terminal',
     author='Luckyluka17',
     packages=find_packages(),
+    long_description=long_description,
     long_description_content_type="text/markdown",
     entry_points={
         'console_scripts': [
@@ -23,4 +24,5 @@ setup(
         "pytz",
         "setuptools"
     ],
+    python_requires='>=3.10'
 )
