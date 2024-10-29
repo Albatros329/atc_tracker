@@ -48,4 +48,10 @@ cd atc_tracker/
 python setup.py install
 ```
 
+## Build
 
+```
+pip install build 
+python -m build
+twine check dist/* # Checking the build
+```
