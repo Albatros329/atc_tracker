@@ -6,3 +6,4 @@
 *.egg
 venv.bat
 debug.bat
+mkdocs.yml
