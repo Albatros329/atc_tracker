@@ -5,3 +5,4 @@
 /venv
 *.egg
 venv.bat
+debug.bat
