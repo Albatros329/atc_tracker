@@ -47,7 +47,7 @@ Weather:
     print("=" * 15 + " " + "=" * 20 + " " + "=" * 30 + " ")
 
     for runway in airport.runways:
-        print(f"{runway["name"]:<15} {f"{runway["length"]["ft"]}ft/{runway["length"]["m"]}m":<20} {f"{runway["surface"]["name"]} ({runway["surface"]["code"]})":<30}")
+        print(f"""{runway['name']:<15} {f"{runway['length']['ft']}ft/{runway['length']['m']}m":<20} {f"{runway['surface']['name']} ({runway['surface']['code']})":<30}""")
 
     print(f"\n{Back.WHITE}{Fore.BLACK}                             Departures                             ")
     print(f"{'Flight Number':<14} {'Callsign':<10} {'Airline code':<12} {'Destination':<13} {'ETD (Local)':<12} {'Status':<22} {'Model':<6} {'Registration':<13} {'Gate':<7}")
@@ -56,8 +56,8 @@ Weather:
     for departure in airport.departures["data"]:
         flight_number = departure["flight"]["identification"]["number"]["default"] if departure["flight"]["identification"]["number"]["default"] != None else ""
         callsign = departure["flight"]["identification"]["callsign"] if departure["flight"]["identification"]["callsign"] != None else ""
-        airline = "" if departure["flight"]["airline"] == None else f"{departure["flight"]["airline"]["code"]["iata"]}/{departure["flight"]["airline"]["code"]["icao"]}"
-        destination = f"{departure["flight"]["airport"]["destination"]["code"]["iata"]}/{departure["flight"]["airport"]["destination"]["code"]["icao"]}"
+        airline = "" if departure["flight"]["airline"] == None else f"""{departure["flight"]["airline"]["code"]["iata"]}/{departure["flight"]["airline"]["code"]["icao"]}"""
+        destination = f"""{departure["flight"]["airport"]["destination"]["code"]["iata"]}/{departure["flight"]["airport"]["destination"]["code"]["icao"]}"""
         etd = datetime.fromtimestamp(departure["flight"]["time"]["scheduled"]["departure"]).strftime("%m/%d %H:%M")
         status = departure["flight"]["status"]["text"]
         model = departure["flight"]["aircraft"]["model"]["code"]
@@ -66,7 +66,7 @@ Weather:
         gate = "" if departure["flight"]["airport"]["origin"]["info"]["gate"] == None else departure["flight"]["airport"]["origin"]["info"]["gate"]
 
 
-        print(f"{flight_number:<14} {callsign:<10} {airline:<12} {destination:<13} {etd:<12} {status:<22} {model:<6} {registration:<13} {f"{terminal}{gate}":<7}")
+        print(f"""{flight_number:<14} {callsign:<10} {airline:<12} {destination:<13} {etd:<12} {status:<22} {model:<6} {registration:<13} {f"{terminal}{gate}":<7}""")
 
     print(f"\n{Back.WHITE}{Fore.BLACK}                              Arrivals                              ")
     print(f"{'Flight Number':<14} {'Callsign':<10} {'Airline code':<12} {'Origin':<13} {'ETA (Local)':<12} {'Status':<22} {'Model':<6} {'Registration':<13} {'Gate':<7}")
@@ -75,8 +75,8 @@ Weather:
     for departure in airport.arrivals["data"]:
         flight_number = departure["flight"]["identification"]["number"]["default"] if departure["flight"]["identification"]["number"]["default"] != None else ""
         callsign = departure["flight"]["identification"]["callsign"] if departure["flight"]["identification"]["callsign"] != None else ""
-        airline = "" if departure["flight"]["airline"] == None else f"{departure["flight"]["airline"]["code"]["iata"]}/{departure["flight"]["airline"]["code"]["icao"]}"
-        origin = f"{departure["flight"]["airport"]["origin"]["code"]["iata"]}/{departure["flight"]["airport"]["origin"]["code"]["icao"]}"
+        airline = "" if departure["flight"]["airline"] == None else f"""{departure["flight"]["airline"]["code"]["iata"]}/{departure["flight"]["airline"]["code"]["icao"]}"""
+        origin = f"""{departure["flight"]["airport"]["origin"]["code"]["iata"]}/{departure["flight"]["airport"]["origin"]["code"]["icao"]}"""
         eta = datetime.fromtimestamp(departure["flight"]["time"]["scheduled"]["arrival"]).strftime("%m/%d %H:%M")
         status = departure["flight"]["status"]["text"]
         model = departure["flight"]["aircraft"]["model"]["code"]
@@ -85,4 +85,4 @@ Weather:
         gate = "" if departure["flight"]["airport"]["destination"]["info"]["gate"] == None else departure["flight"]["airport"]["destination"]["info"]["gate"]
 
 
-        print(f"{flight_number:<14} {callsign:<10} {airline:<12} {origin:<13} {eta:<12} {status:<22} {model:<6} {registration:<13} {f"{terminal}{gate}":<7}")
+        print(f"""{flight_number:<14} {callsign:<10} {airline:<12} {origin:<13} {eta:<12} {status:<22} {model:<6} {registration:<13} {f"{terminal}{gate}":<7}""")

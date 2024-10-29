@@ -45,9 +45,9 @@ def flights_list(filters: dict = {}):
             for zone in zones.keys():
                 if "subzones" in zones[zone]:
                     for subzone in zones[zone]["subzones"].keys():
-                        bounds = f"{zones[zone]["subzones"][subzone]["tl_y"]},{zones[zone]["subzones"][subzone]["br_y"]},{zones[zone]["subzones"][subzone]["tl_x"]},{zones[zone]["subzones"][subzone]["br_x"]}"
+                        bounds = f"{zones[zone]['subzones'][subzone]['tl_y']},{zones[zone]['subzones'][subzone]['br_y']},{zones[zone]['subzones'][subzone]['tl_x']},{zones[zone]['subzones'][subzone]['br_x']}"
                 else:
-                    bounds = f"{zones[zone]["tl_y"]},{zones[zone]["br_y"]},{zones[zone]["tl_x"]},{zones[zone]["br_x"]}"
+                    bounds = f"{zones[zone]['tl_y']},{zones[zone]['br_y']},{zones[zone]['tl_x']},{zones[zone]['br_x']}"
 
                 for flight in list(api.get_flights(bounds=bounds, airline=airline['ICAO'])):
                     model = flight.aircraft_code
@@ -66,7 +66,7 @@ def flights_list(filters: dict = {}):
                     except:
                         eta = "--:--"
 
-                    print(f"{Fore.RED if str(squawk)[0:4] in ["7500", "7600", "7700"] else ""}{model:<6} {call_sign:<10} {status:<10} {departure}-{arrival:<4} {eta:<6} {altitude:<10} {speed:<15} {heading:<8} {Back.WHITE if str(squawk)[0:4] in ["7500", "7600", "7700"] else ""}{squawk:<7}{Back.RESET if str(squawk)[0:4] in ["7500", "7600", "7700"] else ""} {registration:<12}")
+                    print(f"{Fore.RED if str(squawk)[0:4] in ['7500', '7600', '7700'] else ''}{model:<6} {call_sign:<10} {status:<10} {departure}-{arrival:<4} {eta:<6} {altitude:<10} {speed:<15} {heading:<8} {Back.WHITE if str(squawk)[0:4] in ['7500', '7600', '7700'] else ''}{squawk:<7}{Back.RESET if str(squawk)[0:4] in ['7500', '7600', '7700'] else ''} {registration:<12}")
 
                     k += 1
     else:
@@ -112,7 +112,7 @@ def flights_list(filters: dict = {}):
                             except:
                                 eta = "--:--"
 
-                            print(f"{Fore.RED if str(squawk)[0:4] in ["7500", "7600", "7700"] else ""}{model:<6} {call_sign:<10} {status:<10} {departure}-{arrival:<4} {eta:<6} {altitude:<10} {speed:<15} {heading:<8} {Back.WHITE if str(squawk)[0:4] in ["7500", "7600", "7700"] else ""}{squawk:<7}{Back.RESET if str(squawk)[0:4] in ["7500", "7600", "7700"] else ""} {registration:<12}")
+                            print(f"{Fore.RED if str(squawk)[0:4] in ['7500', '7600', '7700'] else ''}{model:<6} {call_sign:<10} {status:<10} {departure}-{arrival:<4} {eta:<6} {altitude:<10} {speed:<15} {heading:<8} {Back.WHITE if str(squawk)[0:4] in ['7500', '7600', '7700'] else ''}{squawk:<7}{Back.RESET if str(squawk)[0:4] in ['7500', '7600', '7700'] else ''} {registration:<12}")
 
                             k += 1
                         else:

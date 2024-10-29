@@ -55,7 +55,7 @@ def main():
                     sys.exit(1)
                 elif str(filter.split("=")[0][2:]) in list(filters.keys()):
                     if not str(filter.split("=")[0][2:]) in ["airline", "registration", "aircraft_type"]:
-                        print(f"{Fore.RED}[!] The \"{filter.split("=")[0]}\" filter cannot be used more than once.")
+                        print(f"{Fore.RED}[!] The \"{filter.split('=')[0]}\" filter cannot be used more than once.")
                         sys.exit(1)
                     else:
                         if not filters.get(str(filter.split("=")[0])[2:]) == str(filter.split("=")[1]):
