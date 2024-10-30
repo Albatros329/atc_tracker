@@ -1,5 +1,5 @@
 import sys
-from colorama import init, Style, Fore, Back
+from colorama import init, Fore, Back
 from atc_tracker.commands import *
 
 init(autoreset=True)
