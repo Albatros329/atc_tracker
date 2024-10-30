@@ -73,6 +73,7 @@ def flights_list(filters: dict = {}):
     Returns:
     None
     """
+    
     k = 0
 
     print(f"{'Model':<6} {'Call Sign':<10} {'Status':<10} {'DEP-ARR':<8} {'ETA':<6} {'Altitude':<10} {'Ground Speed':<15} {'Heading':<8} {'Squawk':<7} {'Registration':<12}")
