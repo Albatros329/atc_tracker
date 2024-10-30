@@ -24,7 +24,7 @@ def main():
     for line in text.splitlines():
         print(gradient_text(line, start_color, end_color))
 
-
+    # Check the command and parameters
     if len(sys.argv) < 2:
         help()
     elif sys.argv[1] == "flights":
