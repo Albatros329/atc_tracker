@@ -3,7 +3,10 @@
 <img src="assets/images/banner2.png" width="500px" alt="logo">
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/Luckyluka17/atc_tracker?style=flat&logo=github&label=Github%20stars)
-![PyPI - Downloads](https://img.shields.io/pypi/dm/atc-tracker?logo=pypi)
+![PyPI - Version](https://img.shields.io/pypi/v/atc_tracker?logo=pypi&label=Latest%20version)
+![PyPI - Downloads](https://img.shields.io/pypi/dd/atc-tracker?logo=pypi&label=Daily%20downloads)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/atc-tracker?logo=pypi&label=Monthly%20downloads)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Luckyluka17/atc_tracker/python-publish.yml?logo=python&logoColor=white&label=Build%20status)
 
 </div>
 
