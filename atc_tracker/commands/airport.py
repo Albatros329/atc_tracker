@@ -1,10 +1,7 @@
 from FlightRadar24 import FlightRadar24API
 from colorama import init, Fore, Back
-from math import radians, sin, cos, sqrt, atan2
-from datetime import datetime, timedelta
-import time
+from datetime import datetime
 import sys
-import keyboard
 from datetime import datetime
 import pytz
 
