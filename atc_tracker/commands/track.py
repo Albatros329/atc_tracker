@@ -8,6 +8,30 @@ api = FlightRadar24API()
 init(autoreset=True)
 
 def track_flight(registration: str = None):
+    """
+    Tracks the flight information for a given aircraft registration.
+    This function continuously fetches and displays real-time flight data for an aircraft
+    identified by its registration number. The data includes flight status, altitude, 
+    ground speed, vertical speed, heading, squawk code, departure and destination airports, 
+    and estimated arrival times. The function updates the information every 3 seconds until 
+    the 'q' key is pressed.
+    Args:
+        registration (str, optional): The registration number of the aircraft to track. 
+                                      Defaults to None.
+    Displays:
+        - Flight Information: Callsign, Airline, Aircraft Model, Registration.
+        - Flight Status: Status, Latitude, Longitude, Altitude, Ground Speed, Vertical Speed, 
+                         Heading, ICAO 24bit Address, Squawk.
+        - Route Information: Departure Airport, Destination Airport, Scheduled Departure Time, 
+                             Real Departure Time, Scheduled Arrival Time, Estimated Arrival Time.
+        - Flight Progress: A progress bar indicating the percentage of the flight completed.
+    Notes:
+        - The function will print an error message if the flight does not exist or has not 
+          switched on its transponder.
+        - The function uses ANSI escape codes to clear the terminal screen and update the 
+          displayed information.
+    """
+
     altitude_last = 0
     ground_speed_last = 0
 
