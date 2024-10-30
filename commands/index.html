@@ -436,6 +436,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tracking-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tracking Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tracking Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -548,6 +581,37 @@
 <li>Departure flight details including flight number, callsign, airline code, destination, estimated time of departure, status, aircraft model, registration, and gate.</li>
 <li>Arrival flight details including flight number, callsign, airline code, origin, estimated time of arrival, status, aircraft model, registration, and gate.</li>
 </ul>
+<h2 id="tracking-command">Tracking Command</h2>
+<p>The <code>track</code> command allows you to track a specific flight in real-time, providing continuous updates on its status and other relevant details.</p>
+<h3 id="example-usage_2">Example Usage</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Track a flight by its registration number</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>atc_tracker<span class="w"> </span>track<span class="w"> </span>N12345
+</code></pre></div>
+<h3 id="output_2">Output</h3>
+<p>The function prints real-time information about the flight including:</p>
+<ul>
+<li>Callsign</li>
+<li>Airline</li>
+<li>Aircraft Model</li>
+<li>Registration</li>
+<li>Status (On ground/In flight)</li>
+<li>Latitude</li>
+<li>Longitude</li>
+<li>Altitude (with trend indicators)</li>
+<li>Ground Speed (with trend indicators)</li>
+<li>Vertical Speed</li>
+<li>Heading</li>
+<li>ICAO 24bit Address</li>
+<li>Squawk</li>
+<li>Departure Airport</li>
+<li>Destination Airport</li>
+<li>Scheduled Departure Time</li>
+<li>Real Departure Time</li>
+<li>Scheduled Arrival Time</li>
+<li>Estimated Arrival Time</li>
+<li>Flight Progress (as a progress bar)</li>
+</ul>
+<p>The function updates the information every few seconds until the user presses 'q' to stop tracking and exit.</p>
 
 
 
