@@ -68,7 +68,7 @@ Weather:
         callsign = departure["flight"]["identification"]["callsign"] if departure["flight"]["identification"]["callsign"] != None else ""
         airline = "" if departure["flight"]["airline"] == None else f"""{departure["flight"]["airline"]["code"]["iata"]}/{departure["flight"]["airline"]["code"]["icao"]}"""
         destination = f"""{departure["flight"]["airport"]["destination"]["code"]["iata"]}/{departure["flight"]["airport"]["destination"]["code"]["icao"]}"""
-        etd = datetime.fromtimestamp(departure["flight"]["time"]["scheduled"]["departure"]).strftime("%m/%d %H:%M")
+        etd = datetime.fromtimestamp(departure["flight"]["time"]["scheduled"]["departure"]).strftime("%m-%d %H:%M")
         status = departure["flight"]["status"]["text"]
         model = departure["flight"]["aircraft"]["model"]["code"]
         registration = departure["flight"]["aircraft"]["registration"]
@@ -87,7 +87,7 @@ Weather:
         callsign = departure["flight"]["identification"]["callsign"] if departure["flight"]["identification"]["callsign"] != None else ""
         airline = "" if departure["flight"]["airline"] == None else f"""{departure["flight"]["airline"]["code"]["iata"]}/{departure["flight"]["airline"]["code"]["icao"]}"""
         origin = f"""{departure["flight"]["airport"]["origin"]["code"]["iata"]}/{departure["flight"]["airport"]["origin"]["code"]["icao"]}"""
-        eta = datetime.fromtimestamp(departure["flight"]["time"]["scheduled"]["arrival"]).strftime("%m/%d %H:%M")
+        eta = datetime.fromtimestamp(departure["flight"]["time"]["scheduled"]["arrival"]).strftime("%m-%d %H:%M")
         status = departure["flight"]["status"]["text"]
         model = departure["flight"]["aircraft"]["model"]["code"]
         registration = departure["flight"]["aircraft"]["registration"]
