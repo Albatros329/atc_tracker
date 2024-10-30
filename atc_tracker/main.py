@@ -88,6 +88,13 @@ def main():
         else:
             print(f"{Fore.RED}[!] Invalid arguments")
             sys.exit(1)
+    elif sys.argv[1] == "track":
+        if len(sys.argv) == 3:
+            print(f"{Fore.BLUE}{Back.WHITE}[tip] Hold down the q key to stop the program.{Back.RESET}\n")
+            track_flight(sys.argv[2])
+        else:
+            print(f"{Fore.RED}[!] Invalid arguments")
+            sys.exit(1)
     elif sys.argv[1] == "about":
         about()
     elif sys.argv[1] == "help":
