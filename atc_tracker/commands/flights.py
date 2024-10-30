@@ -47,9 +47,6 @@ def get_eta(flight):
 
 def flights_list(filters: dict = {}):
     """
-    Display the list of flights, based on a list of filters.
-
-    :param filters: Filters list
     Lists flights based on provided filters or all flights if no filters are given.
     Parameters:
     filters (dict): A dictionary of filters to apply when listing flights. Possible keys include:
