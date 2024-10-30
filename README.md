@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/images/banner2.png" width="500px" alt="logo">
+<img src="https://raw.githubusercontent.com/Luckyluka17/atc_tracker/refs/heads/main/assets/images/banner2.png" width="500px" alt="logo">
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/Luckyluka17/atc_tracker?style=flat&logo=github&label=Github%20stars)
 ![PyPI - Version](https://img.shields.io/pypi/v/atc_tracker?logo=pypi&label=Latest%20version)
@@ -23,14 +23,14 @@
 <details>
 <summary>Airport details</summary>
 
-![Airport details](assets/images/overview/image.png)
+![Airport details](https://raw.githubusercontent.com/Luckyluka17/atc_tracker/main/assets/images/overview/image.png)
 
 </details>
 
 <details>
 <summary>Flights list (with filters)</summary>
 
-![Flights list (with filters)](assets/images/overview/image2.png)
+![Flights list (with filters)](https://raw.githubusercontent.com/Luckyluka17/atc_tracker/main/assets/images/overview/image2.png)
 
 </details>
 
