@@ -12,6 +12,19 @@ api = FlightRadar24API()
 init(autoreset=True)
 
 def airport_details(airport_iata_icao: str = None):
+    """
+    Fetch and display detailed information about an airport, including general details, runways, departures, and arrivals.
+    Args:
+        airport_iata_icao (str, optional): The IATA or ICAO code of the airport. Defaults to None.
+    Raises:
+        ValueError: If the provided airport code is invalid.
+    Prints:
+        - General airport details such as name, location, timezone, elevation, coordinates, runways, rating, website, and weather.
+        - Detailed information about each runway.
+        - Departure flight details including flight number, callsign, airline code, destination, estimated time of departure, status, aircraft model, registration, and gate.
+        - Arrival flight details including flight number, callsign, airline code, origin, estimated time of arrival, status, aircraft model, registration, and gate.
+    """
+
     try:
         airport = api.get_airport(airport_iata_icao)
         airport.set_airport_details(api.get_airport_details(airport_iata_icao))

@@ -10,6 +10,23 @@ api = FlightRadar24API()
 init(autoreset=True)
 
 def get_eta(flight):
+    """
+    Calculate the estimated time of arrival (ETA) for a given flight.
+    This function computes the ETA based on the current position of the flight
+    and its destination airport using the Haversine formula to calculate the 
+    distance between two points on the Earth's surface. The ETA is then 
+    determined by dividing the distance by the flight's ground speed.
+    Parameters:
+    flight (Flight): An object representing the flight, which must have the 
+                     following attributes:
+                     - latitude (float): Current latitude of the flight.
+                     - longitude (float): Current longitude of the flight.
+                     - destination_airport_iata (str): IATA code of the destination airport.
+                     - ground_speed (float): Current ground speed of the flight in km/h.
+    Returns:
+    str: The estimated time of arrival in 'HH:MM' format.
+    """
+
     R = 6371.0  # Radius of the Earth in km
     lat1 = radians(flight.latitude)
     lon1 = radians(flight.longitude)
@@ -33,6 +50,31 @@ def flights_list(filters: dict = {}):
     Display the list of flights, based on a list of filters.
 
     :param filters: Filters list
+    Lists flights based on provided filters or all flights if no filters are given.
+    Parameters:
+    filters (dict): A dictionary of filters to apply when listing flights. Possible keys include:
+        - "airline" (str or list): Filter by airline ICAO code(s).
+        - "registration" (str or list): Filter by aircraft registration(s).
+        - "aircraft_type" (str or list): Filter by aircraft type(s).
+        - "bounds" (str): Geographical bounds to filter flights.
+
+    The function prints a table of flight information including:
+        - Model
+        - Call Sign
+        - Status (On ground/In flight)
+        - DEP-ARR (Departure and Arrival airports)
+        - ETA (Estimated Time of Arrival)
+        - Altitude
+        - Ground Speed
+        - Heading
+        - Squawk
+        - Registration
+    
+    If no filters are provided, the function lists all flights from all airlines and zones.
+    The function also highlights flights with emergency squawk codes (7500, 7600, 7700) in red.
+    If the user presses 'q', the function stops listing flights and exits.
+    Returns:
+    None
     """
     k = 0
 

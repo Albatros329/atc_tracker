@@ -7,6 +7,17 @@ init(autoreset=True)
 available_filters = ["airline", "bounds", "registration", "aircraft_type"]
 
 def gradient_text(text, start_color, end_color):
+    """
+    Generates a gradient-colored text string for terminal output.
+    Args:
+        text (str): The text to be colored.
+        start_color (tuple): The RGB color tuple (R, G, B) for the start of the gradient.
+        end_color (tuple): The RGB color tuple (R, G, B) for the end of the gradient.
+    Returns:
+        str: The text with gradient colors applied, formatted for terminal output.
+    """
+
+
     if len(text) == 0: 
         return ""
     
