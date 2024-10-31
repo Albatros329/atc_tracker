@@ -20,8 +20,9 @@ setup(
     install_requires=[
         "colorama",
         "FlightRadarAPI",
-        "keyboard",
+        "pynput",
         "pytz",
+        "keyboard",
         "setuptools"
     ],
     python_requires='>=3.10'

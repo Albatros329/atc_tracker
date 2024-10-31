@@ -4,10 +4,26 @@ from math import radians, sin, cos, sqrt, atan2
 from datetime import datetime, timedelta
 import time
 import sys
-import keyboard
+from pynput import keyboard
 
 api = FlightRadar24API()
 init(autoreset=True)
+
+q_pressed = False
+
+def on_press(key):
+    global q_pressed
+    try:
+        if key.char == 'q':  # Vérifie si la touche 'q' est pressée
+            q_pressed = True
+    except AttributeError:
+        pass
+
+def start_listener():
+    listener = keyboard.Listener(on_press=on_press)
+    listener.start()
+
+start_listener()
 
 def get_eta(flight):
     """
@@ -135,7 +151,7 @@ def flights_list(filters: dict = {}):
             for registration in registrations if registrations else [None]:
                 for type in aircrafttype if aircrafttype else [None]:
                     for flight in list(api.get_flights(airline=airline, bounds=filters.get("bounds"), registration=registration, aircraft_type=type)):
-                        if not keyboard.is_pressed('q'):
+                        if not q_pressed:
                             model = flight.aircraft_code
                             call_sign = flight.callsign
                             status = "On ground" if flight.on_ground else "In flight"

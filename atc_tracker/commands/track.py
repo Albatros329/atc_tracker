@@ -1,11 +1,27 @@
 from colorama import init, Fore, Back, Style
 from FlightRadar24 import FlightRadar24API
-import keyboard
+from pynput import keyboard
 import time
 from datetime import datetime
 
 api = FlightRadar24API()
 init(autoreset=True)
+
+q_pressed = False
+
+def on_press(key):
+    global q_pressed
+    try:
+        if key.char == 'q':  # Vérifie si la touche 'q' est pressée
+            q_pressed = True
+    except AttributeError:
+        pass
+
+def start_listener():
+    listener = keyboard.Listener(on_press=on_press)
+    listener.start()
+
+start_listener()
 
 def track_flight(registration: str = None):
     """
@@ -36,7 +52,7 @@ def track_flight(registration: str = None):
     ground_speed_last = 0
 
     if not len(api.get_flights(registration=registration)) == 0:
-        while not keyboard.is_pressed("q"):
+        while not q_pressed:
             flight_data = api.get_flights(registration=registration)[0]
             flight_details = api.get_flight_details(flight_data)
             
