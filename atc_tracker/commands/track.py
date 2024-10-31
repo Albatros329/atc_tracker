@@ -63,18 +63,18 @@ def track_flight(registration: str = None):
             status = 'In flight' if flight_details['status']['live'] else 'On ground'
 
             if int(flight_data.altitude) > altitude_last:
-                altitude = f"{flight_data.altitude} ft {Style.BRIGHT}⇗{Style.RESET_ALL}"
+                altitude = f"{flight_data.altitude} ft {Style.BRIGHT}{Fore.GREEN}⇗{Fore.RESET}{Style.RESET_ALL}"
             elif int(flight_data.altitude) < altitude_last:
-                altitude = f"{flight_data.altitude} ft {Style.BRIGHT}⇘{Style.RESET_ALL}"
+                altitude = f"{flight_data.altitude} ft {Style.BRIGHT}{Fore.RED}⇘{Fore.RESET}{Style.RESET_ALL}"
             elif int(flight_data.altitude) == altitude_last:
-                altitude = f"{flight_data.altitude} ft {Style.BRIGHT}⇒{Style.RESET_ALL}"
+                altitude = f"{flight_data.altitude} ft {Style.BRIGHT}{Fore.BLUE}⇒{Fore.RESET}{Style.RESET_ALL}"
 
             if int(flight_data.ground_speed) > ground_speed_last:
-                ground_speed = f"{flight_data.ground_speed} kts {Style.BRIGHT}⇗{Style.RESET_ALL}"
+                ground_speed = f"{flight_data.ground_speed} kts {Style.BRIGHT}{Fore.GREEN}⇗{Fore.RESET}{Style.RESET_ALL}"
             elif int(flight_data.ground_speed) < ground_speed_last:
-                ground_speed = f"{flight_data.ground_speed} kts {Style.BRIGHT}⇘{Style.RESET_ALL}"
+                ground_speed = f"{flight_data.ground_speed} kts {Style.BRIGHT}{Fore.RED}⇘{Fore.RESET}{Style.RESET_ALL}"
             elif int(flight_data.ground_speed) == ground_speed_last:
-                ground_speed = f"{flight_data.ground_speed} kts {Style.BRIGHT}⇒{Style.RESET_ALL}"
+                ground_speed = f"{flight_data.ground_speed} kts {Style.BRIGHT}{Fore.BLUE}⇒{Fore.RESET}{Style.RESET_ALL}"
             
             vertical_speed = f"{flight_data.vertical_speed} fpm"
             heading = flight_data.heading
