@@ -6,7 +6,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='atc_tracker',
-    version='0.1.2-beta',
+    version='0.1.3-beta',
     description='The Air traffic Control in your terminal',
     author='Luckyluka17',
     packages=find_packages(),
