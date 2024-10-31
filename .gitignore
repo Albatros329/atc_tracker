@@ -13,3 +13,4 @@ test.bat
 /dist
 /site
 /.vscode
+*.pyc
