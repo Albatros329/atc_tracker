@@ -4,9 +4,15 @@ from pathlib import Path
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
+version_file = Path(__file__).parent / "atc_tracker" / "__version__.py"
+version_globals = {}
+with open(version_file) as f:
+    exec(f.read(), version_globals)
+VERSION = version_globals['__version__']
+
 setup(
     name='atc_tracker',
-    version='0.1.3-beta',
+    version=VERSION,
     description='The Air traffic Control in your terminal',
     author='Luckyluka17',
     packages=find_packages(),
