@@ -10,6 +10,7 @@ with open(version_file) as f:
     exec(f.read(), version_globals)
 VERSION = version_globals['__version__']
 
+
 setup(
     name='atc_tracker',
     version=VERSION,
